@@ -25,5 +25,15 @@ export function timeFormat(format) {
         }
     }
 
+    // RegExp.$1,test,exec;
+    // var r = /(\d+)-(\w+)/;//RegExp.$1为第一个子匹配（表达式中括号的部分）,最多是$99
+    // var b=r.exec("2013-love-b");//返回整个匹配的字符串
+    // console.log(b+"   "+RegExp.$1+"=="+RegExp.$2);
+    
+    // b = r.test("1997-good");//返回是否存在满足匹配
+    // console.log(b+"   "+RegExp.$1+"=="+RegExp.$2)
+
     return format;
 }
+
+
