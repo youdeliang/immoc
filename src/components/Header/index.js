@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import './index.less'
+import Axios from '../../axios'
 import {timeFormat} from '../../utils/utils'
 
 export default class Header extends Component{
@@ -15,6 +16,17 @@ export default class Header extends Component{
         setInterval(()=>{
             this.setState({sysTime: timeFormat('YYYY-MM-DD hh:mm')})
         },60000)
+        this.getWeatherApi()
+    }
+
+    getWeatherApi(){
+        Axios.jsonp({
+            url:'http://api.map.baidu.com/weather/v1/?district_id=310112&data_type=all&ak=U1wc3z3p8sptnlIBEaHtZe3OWxdoFQqM'
+        }).then((res)=>{
+            console.log(res)
+        })
+
+
     }
 
     render(){
