@@ -20,10 +20,18 @@ export default class Header extends Component{
     }
 
     getWeatherApi(){
+        console.log('object');
+        let city ='北京'
         Axios.jsonp({
-            url:'http://api.map.baidu.com/weather/v1/?district_id=310112&data_type=all&ak=U1wc3z3p8sptnlIBEaHtZe3OWxdoFQqM'
+            url:'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2'
         }).then((res)=>{
-            console.log(res)
+            if(res.status === 'success'){
+                let data = res.results[0].weather_data[0];
+                this.setState({
+                    dayPictureUrl:data.dayPictureUrl,
+                    weather:data.weather
+                })
+            }
         })
 
 
@@ -44,8 +52,13 @@ export default class Header extends Component{
                         首页
                     </Col>
                     <Col span={20} className='weather'>
-                        <span className='date'>{sysTime}</span>
-                        <span className='weather-detail'>晴转多云</span>
+                        <span className="date">{sysTime}</span>
+                        <span className="weather-img">
+                            <img src={this.state.dayPictureUrl} alt="" />
+                        </span>
+                        <span className="weather-detail">
+                            {this.state.weather}
+                        </span>
                     </Col>
                 </Row>
             </div>

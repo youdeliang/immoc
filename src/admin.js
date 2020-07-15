@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import NavLeft from './components/NavLeft'
-import { Row, Col, Button } from 'antd'
+import { Row, Col } from 'antd'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import './style/common.less'
+import Home from './pages/home'
 
 
 export default class Admin extends Component{
@@ -29,7 +30,7 @@ export default class Admin extends Component{
                    <Col span='20' className='main'>
                        <Header/>
                        <Row className="content">
-                            <Button>SDSD</Button>
+                            <Home />
                         </Row>
                        <Footer/>
                    </Col>

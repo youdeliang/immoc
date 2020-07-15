@@ -1,6 +1,8 @@
-export function formateDate(time) {
+export default {
+formateDate(time) {
     if (!time) return
     return time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate()
+}
 }
 
 export function timeFormat(format) {

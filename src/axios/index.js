@@ -1,4 +1,5 @@
 import JsonP from 'jsonp'
+
 export default class Axios{
   static jsonp(options){
     return new Promise((resolve,reject)=>{
@@ -6,12 +7,12 @@ export default class Axios{
         param:'callback'
       },function(err,response){
         //to-do
-        debugger;
-        if(response.status ==='success'){
-          resolve(response);
-        }else{
-          reject(response.message)
-        }
+        // debugger;
+        // if(response.status ==='success'){
+        //   resolve(response);
+        // }else{
+        //   reject(response.message)
+        // }
       })
     })
   }

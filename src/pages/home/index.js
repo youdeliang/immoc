@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import './index.less'
-export default class Footer extends Component{
+
+export default class Home extends Component{
 
     render(){
         return (
-            <div className='footer'>
-                组件调用
+            <div className='home-wrap'>
+               home 
             </div>
         )
     }

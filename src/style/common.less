@@ -1,3 +1,4 @@
+@import './default.less';
 .container{
     display:flex;
     .nav-left{
@@ -11,8 +12,9 @@
         transform: transation color 0.2s;
     }
     .main{
-        flex: 1;
         height: calc(100vh);
+        background: @colorL;
+        overflow: hidden;
     }
     .content{
         position: relative;
