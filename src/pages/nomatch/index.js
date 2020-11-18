@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default class Login extends React.Component {
+export default class NoMatch extends React.Component {
   render() {
     return (
       <div>
-        this is loginpage
+        404 Not Found !!!
       </div>
     )
   }
